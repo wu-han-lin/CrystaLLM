@@ -1,0 +1,16 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Calc NLL",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "bin/calc_nll.py",
+            "console": "integratedTerminal",
+            "args": ["--config", "config/crystallm_mp_20_small_ppl.yaml", "device=cuda", "dtype=float16", "dataset=my_tmp", "out_dir=my_tmp"]
+        }
+    ]
+}

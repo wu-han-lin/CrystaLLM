@@ -34,6 +34,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     url = f"{STORAGE_URL}/{args.name}"
+    print(url)
     out_path = get_out_path(args.out, url)
 
     print(f"downloading to {out_path} ...")

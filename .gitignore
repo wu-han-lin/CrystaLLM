@@ -5,7 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
-
+prompts/
 # Distribution / packaging
 .Python
 build/
@@ -157,10 +157,20 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
-
+*.csv
+*.pkl
 out/
-
+resources/
 scratches/
 saved_models/
 
 .DS_Store
+
+*.tar.gz
+*.pkl.gz
+*.bin
+*.pt
+*.gz
+*.csv
+
+*.txt

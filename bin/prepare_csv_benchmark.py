@@ -15,7 +15,11 @@ def process_cif_files(input_csv, output_tar_gz):
         for _, row in tqdm(df.iterrows(), total=len(df), desc="preparing CIF files..."):
             id = row["material_id"]
             struct = Structure.from_str(row["cif"], fmt="cif")
-            cif_content = CifWriter(struct=struct, symprec=0.1).__str__()
+            try:
+                cif_content = CifWriter(struct=struct, symprec=0.1).__str__()
+            except Exception as e:
+                print(f"Error processing {id}: {e}")
+                continue
 
             cif_file = tarfile.TarInfo(name=f"{id}.cif")
             cif_bytes = cif_content.encode("utf-8")

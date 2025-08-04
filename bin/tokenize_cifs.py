@@ -4,6 +4,7 @@ import random
 import gzip
 import argparse
 import tarfile
+import torch
 import multiprocessing as mp
 from tqdm import tqdm
 try:
@@ -16,6 +17,7 @@ from crystallm import (
     array_split,
 )
 
+from bin.train import read_start_indices
 
 def progress_listener(queue, n):
     pbar = tqdm(total=n, desc="tokenizing...")
